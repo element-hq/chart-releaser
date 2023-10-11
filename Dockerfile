@@ -1,8 +1,8 @@
 FROM alpine:3.18
 
-RUN apk --no-cache add ca-certificates git
+RUN apk --no-cache add ca-certificates git unzip curl make
 
-COPY cr /usr/local/bin/cr
+COPY dist/chart-releaser_linux_amd64_v1/cr /usr/local/bin/cr
 
 # Ensure that the binary is available on path and is executable
 RUN cr --help
